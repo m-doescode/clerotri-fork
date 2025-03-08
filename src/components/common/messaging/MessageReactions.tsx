@@ -39,6 +39,9 @@ export const MessageReactions = observer(
                       : msg.unreact(r.emoji)
                     : showToast('You cannot react to this message.');
                 })}
+                onLongPress={action(() => {
+                  app.openViewReactions(msg, r.emoji);
+                })}
                 style={{
                   padding: commonValues.sizes.small,
                   borderRadius: commonValues.sizes.small,
